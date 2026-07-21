@@ -18,12 +18,19 @@ service CatalogService @(path:'/CatalogService') {
     as projection on transaction.purchaseorder{
         *,
         case OVERALL.STATUS
-            when 'A' then 3
+            when 'A' then '3'
             when 'D' then 3
             when 'X' then 1
             when 'P' then 2
             else 0
-        end as Spiderman: Integer
+        end as Spiderman: Integer,
+        case OVERALL.STATUS
+            when 'A' then 'Approved'
+            when 'D' then 'Delivered'
+            when 'X' then 'Cancelled'
+            when 'P' then 'Pending'
+            else 'Unknown'
+        end as Description: String(10)
     }
     actions{
         //instance bound - the system will pass PO_ID to the action automatically
