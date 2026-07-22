@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "dependencies": {
     "@cap-js-community/odata-v2-adapter": "^1.16.0",
+<<<<<<< HEAD
     "@cap-js/hana": "^2",
+=======
+    "@cap-js/hana": "^3",
+>>>>>>> 07ceabc45413909684e0305e1d16150c985ac788
     "@sap/cds": "^9"
   },
   "devDependencies": {
